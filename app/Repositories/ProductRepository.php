@@ -5,23 +5,19 @@ namespace App\Repositories;
 use App\Product;
 use App\Category;
 
-class ProductRepository
+class ProductRepository implements ProductRepositoryInterface
 {
     public function all()
     {
         $category = Category::all();
-        $product;
         if (request()->input('filter')) {
             switch (request()->input('filter')) {
-                case 'all':
-                    $product = Product::all();
-                break;
                 case 'duplicate':
                     $product = $this->duplicateProduct();
-                break;
+                    break;
                 default:
                     $product = Product::all();
-                break;
+                    break;
             }
         } else {
             $product = Product::all();
@@ -51,7 +47,7 @@ class ProductRepository
         }
         return null;
     }
-    
+
     public function update($product)
     {
         return $product->update([

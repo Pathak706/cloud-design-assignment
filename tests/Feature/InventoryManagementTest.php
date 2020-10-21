@@ -8,11 +8,9 @@ use App\Category;
 use Illuminate\Support\Str;
 use Tests\Feature\AuthenticationTest;
 
-class CategoryTest extends TestCase
+class InventoryManagementTest extends TestCase
 {
     use RefreshDatabase;
-
-       
 
     /** @test */
     public function a_category_added()

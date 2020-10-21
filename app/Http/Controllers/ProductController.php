@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\ProductRepositoryInterface;
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
 use App\Product;
@@ -14,7 +15,7 @@ class ProductController extends Controller
      *
      * @return void
      */
-    public function __construct(ProductRepository $productRepository)
+    public function __construct(ProductRepositoryInterface $productRepository)
     {
         $this->productRepository = $productRepository;
         $this->middleware('auth');
