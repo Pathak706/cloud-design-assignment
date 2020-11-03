@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\ProductRepositoryInterface;
-use Illuminate\Http\Request;
-use App\Repositories\ProductRepository;
 use App\Product;
 
 class ProductController extends Controller
